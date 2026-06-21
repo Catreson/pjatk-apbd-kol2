@@ -10,6 +10,9 @@ public class AppDbContext : DbContext
     public DbSet<Mechanic>  Concerts  { get; set; }
     public DbSet<Service>   Services   { get; set; }
     public DbSet<Visit>   Visits   { get; set; }
+    public DbSet<Mechanic>   Mechanics   { get; set; }
+    public DbSet<VisitServicer>   VisitServices   { get; set; }
+
 
 
     protected AppDbContext() { }

@@ -37,12 +37,14 @@ public class VisitServiceDto
 }
 
 // ── POST /api/customers ────────────────────────────────────────────────────
-public class CustomerCreateDto
+public class VisitCreateDto
 {
     [Required]
-    public CustomerInfoDto Customer { get; set; } = null!;
+    public int ClientId { get; set;}
+    [Required]
+    public string MechanicLicenceNumber { get; set; } = null!;
     [Required, MinLength(1)]
-    public List<PurchaseCreateDto> Purchases { get; set; } = [];
+    public List<ServiceCreateDto> Services { get; set; } = [];
 }
 
 public class CustomerInfoDto
@@ -55,12 +57,16 @@ public class CustomerInfoDto
     public string? PhoneNumber { get; set; }
 }
 
-public class PurchaseCreateDto
+public class VisitServiceCreateDto
 {
-    [Range(1, int.MaxValue)]
-    public int SeatNumber { get; set; }
-    [Required]
-    public string ConcertName { get; set; } = null!;
     [Range(0.01, double.MaxValue)]
-    public decimal Price { get; set; }
+    public decimal BaseFee { get; set; }
+}
+
+public class ServiceCreateDto
+{
+    [Required]
+    public string ServiceName { get; set; } = null!;
+    [Range(0.01, double.MaxValue)]
+    public decimal ServiceFee { get; set; }
 }

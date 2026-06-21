@@ -19,16 +19,16 @@ public class CustomersController : ControllerBase
         catch (NotFoundException e) { return NotFound(e.Message); }
     }
 
-    // [HttpPost]
-    // public async Task<IActionResult> Create([FromBody] CustomerCreateDto dto)
-    // {
-    //     try
-    //     {
-    //         await _service.CreateAsync(dto);
-    //         return Created();
-    //     }
-    //     catch (NotFoundException e)   { return NotFound(e.Message); }
-    //     catch (ConflictException e)   { return Conflict(e.Message); }
-    //     catch (BadRequestException e) { return BadRequest(e.Message); }
-    // }
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] VisitCreateDto dto)
+    {
+        try
+        {
+            await _service.CreateAsync(dto);
+            return Created();
+        }
+        catch (NotFoundException e)   { return NotFound(e.Message); }
+        catch (ConflictException e)   { return Conflict(e.Message); }
+        catch (BadRequestException e) { return BadRequest(e.Message); }
+    }
 }

@@ -13,5 +13,5 @@ public class Service
     [Column(TypeName = "decimal(10,2)")]
     public int BaseFee { get; set; }
 
-    public ICollection<VisitService> Visits { get; set; } = [];
+    public ICollection<VisitServicer> Visits { get; set; } = [];
 }

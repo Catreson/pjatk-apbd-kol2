@@ -5,5 +5,5 @@ namespace Kol2.Services;
 public interface IVisitService
 {
     Task<VisitDto> GetVisitAsync(int visitId);
-    // Task CreateAsync(CustomerCreateDto dto);
+    Task CreateAsync(VisitCreateDto dto);
 }

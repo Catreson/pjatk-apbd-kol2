@@ -16,5 +16,5 @@ public class Visit
     public DateTime Date { get; set; }
     public Client Clients { get; set; } = null!;
     public Mechanic Mechanics { get; set; } = null!;
-    public ICollection<VisitService> VisitServices { get; set; } = [];
+    public ICollection<VisitServicer> VisitServices { get; set; } = [];
 }
